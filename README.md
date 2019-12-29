@@ -1,5 +1,7 @@
 # ImageWatch
-Watch modified graphs, plots, and machine learning output update in real-time
+## Description
+
+ImageWatch displays a group of images in a window and refreshes whenever they change. It's intended for watching graphs, plots, and machine learning output update in real-time.
 
 ## Install
 Requirements:
