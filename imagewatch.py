@@ -69,13 +69,15 @@ class ImageWatch:
     def start(self):
         clock = pygame.time.Clock()
         while True:
+            dirty = False
             for event in pygame.event.get():
-                if event.type == pygame.QUIT:
+                if event.type == pygame.VIDEOEXPOSE:
+                    dirty = True
+                elif event.type == pygame.QUIT:
                     raise SystemExit
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:
                         raise SystemExit
-            dirty = False
             for image, pos in self.images:
                 image.check()
                 dirty |= image.dirty
